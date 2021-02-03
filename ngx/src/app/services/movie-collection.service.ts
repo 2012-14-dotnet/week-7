@@ -1,4 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Movie } from '../models/movie';
 import { MovieHttpService } from './movie-http.service';
 
@@ -8,11 +10,11 @@ import { MovieHttpService } from './movie-http.service';
 export class MovieCollectionService {
   movieApi: MovieHttpService;
 
-  constructor(movieHttp: MovieHttpService) {
+  constructor(movieHttp: MovieHttpService, http: HttpClient) {
     this.movieApi = movieHttp;
   }
 
-  get() {
+  get(): Observable<Movie[]> {
     return this.movieApi.httpGet();
   }
 
