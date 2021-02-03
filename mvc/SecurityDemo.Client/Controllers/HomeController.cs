@@ -24,7 +24,7 @@ namespace SecurityDemo.Client.Controllers
       return View();
     }
 
-    [Authorize]
+    [Authorize("admin")]
     public IActionResult Privacy()
     {
       return View();
