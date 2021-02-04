@@ -1,0 +1,34 @@
+services:
+  angular:
+    deploy:
+      replicas: 10
+    build:
+      dockerfile: angular.dockerfile
+      context: .
+    ports:
+      - "8000:4200"
+    networks:
+      - locally
+
+  aspnet:
+    build:
+      dockerfile: aspnet.dockerfile
+      context: .
+    ports:
+      - "8001:80"
+    networks:
+      - locally
+
+  webapi:
+    build:
+      dockerfile: webapi.dockerfile
+      context: .
+    ports:
+      - "8002:80"
+    networks:
+      - locally
+
+networks:
+  locally:
+
+version: "3.3"

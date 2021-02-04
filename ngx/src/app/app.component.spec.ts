@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'oldschool'`, () => {
+  it(`should have as app title 'oldschool'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
     expect(app.title).toEqual('oldschool');
   });
 
-  it('should render title', () => {
+  it('should render page title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('oldschool app is running!');
+    expect(compiled.querySelector('header > h1').textContent).toContain('OldSchool Movies');
   });
 });

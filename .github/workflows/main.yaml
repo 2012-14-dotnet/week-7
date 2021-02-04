@@ -1,4 +1,12 @@
 jobs:
+  analyze:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+      - run: npm install
+      - run: npm run test
+        working-directory: ngx
+
   pack:
     env:
       DOCKER_USER: ${{ secrets.DOCKER_USER }}
