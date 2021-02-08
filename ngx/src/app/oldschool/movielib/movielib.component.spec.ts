@@ -6,7 +6,9 @@ describe('MovielibComponent', () => {
   let component: MovielibComponent;
   let fixture: ComponentFixture<MovielibComponent>;
   let MovieCollectionServiceStub = {
-    get() { }
+    get() {
+      fixedCollectionOfMovies
+    }
   }
 
   beforeEach(async () => {
